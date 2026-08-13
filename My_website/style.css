@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+:root {
+    --primary: hsl(0, 0%, 100%);
+    --secondary: hsl(0 0 100%);
+    --tertiary: hsl(0, 0%, 90%);
+    --header_text: hsl(0 0 50);
+    --text: hsl(0, 0%, 80%);
+    --text_anti: hsl(0, 0%, 90%);
+    --accent: hsl(70, 100%, 60%);
+    --accent_hover: hsl(70, 100%, 50%);
+    --font_family_all: 'Ubuntu', sans-serif;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0px;
+    margin-top: 1em;
+    background: rgb(98, 170, 39, 0.5);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+
+
+}
+
+
+
+#header {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-around;
+
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+    max-width: 50rem;
+    border-radius: 1em;
+    padding: 0.5em;
+    background-color: rgba(255, 255, 255);
+
+    align-items: center;
+}
+
+#icon_pic {
+    border-radius: 8px;
+    width: 100px;
+    height: 50px;
+
+}
+
+.nav_links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+}
+
+/*midbody*/
+#web_body {
+    font-family: var(--font_family_all);
+
+    min-height: 40dvh;
+    padding-inline: clamp(1rem, 5vw, 6rem);
+    padding-top: 6rem;
+
+    margin-top: 5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 4rem clamp(1.5rem, 5vw, 6rem);
+}
+
+/*textelements*/
+
+#main_writer {
+    color: var(--secondary);
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    font-size: clamp(1rem, 5vw, 3rem);
+    min-width: 60hvw;
+    text-shadow: 2px 2px 8px hsl(0, 0%, 35%), -2px -2px 10px #ffffff;
+}
+
+#paragraph {
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: 1em;
+    margin-bottom: 0px;
+    font-size: large;
+    color: var(--tertiary);
+    min-width: 18rem;
+
+}
+
+.div_title {
+    font-weight: 500;
+}
+
+.div_text {
+    font-weight: 200;
+}
+
+
+/*Buttons*/
+
+.anchor_buttons {
+    width: 4rem;
+    justify-content: center;
+    display: flex;
+    padding: 2rem clamp(1rem, 3dvw, 3rem);
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.5em;
+    color: var(--header_text);
+    transition: background-color 0.7s ease;
+    position: relative;
+    z-index: 0;
+}
+
+.anchor_buttons::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 10px 10px 0px 0px;
+    display: block;
+    z-index: -1;
+    height: 0px;
+    width: 100%;
+    transition: 150ms ease-in-out;
+    background: linear-gradient(to top, hsl(88, 40%, 44%) 0%, hsl(0 0 95)5%,white 110%);
+
+}
+
+.anchor_buttons:hover::after {
+    height: 100%;
+}
+/*
+.anchor_buttons:active::after {
+    height: 100%;
+} */
+
+#signin {
+    border-radius: 5px;
+    padding: .25em;
+    padding-left: 1rem;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: .5em;
+    background-color: var(--accent);
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+#signin {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#BodyButton {
+    margin-top: 2rem;
+    padding: 0.5rem;
+    background-color: var(--accent);
+    border: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+
+#signin:hover {
+    cursor: pointer;
+    background-color: var(--accent_hover);
+}
+
+button {
+    box-shadow: 3px 3px 12px rgb(122, 122, 122), -3px -3px -12px #ffffff;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+/*media*/
+
+@media (max-width:800px) {
+    #header {
+        width: 90dvw;
+    }
+
+    body {
+        background-size: 100dvw auto;
+        background-size: cover;
+    }
+
+    .anchor_buttons {
+        display: grid;
+        gap: 4px;
+        text-align: center;
+    }
+
+    .nav_links {
+        padding: 0.3rem;
+    }
+
+    #web_body {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    #BodyButton {
+        display: flex;
+        align-items: center;
+    }
+
+    #paragraph {
+        max-width: 50dvw;
+    }
+
+    #signin{
+        padding-right: 1rem;
+        margin-bottom: 1rem;
+    }
+
+
+}
+
+@media (min-width:800px) {
+
+
+    #web_body {
+        display: block;
+        margin: 2rem;
+
+    }
+
+    .anchor_buttons {
+        display: grid;
+        text-align: center;
+    }
+
+
+
+
+}
+
+@media (max-width:419px) {
+
+
+
+    .anchor_buttons {
+        padding: 0.25em;
+        margin: 0px;
+    }
+
+    #Service_flexbox_container {
+
+        margin: 0em 1em;
+    }
+
+    #main_writer {
+        justify-content: center;
+        text-align: center;
+    }
+
+
+
+
+}
+
+/*serviceflashcards*/
+#Service_flexbox_container {
+    font-family: var(--font_family_all);
+    font-size: 1rem;
+
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+
+    flex: 1 1 100%;
+    max-width: 100%;
+
+    margin: 0px auto;
+    padding: 0px auto;
+
+    border-radius: 1em;
+
+}
+
+
+
+#Service_flexbox_container i {
+    font-size: 1rem;
+    background-color: hsl(0, 0%, 100%);
+    padding: 5px;
+    border: 1px solid;
+}
+
+.service_boxes {
+    border-radius: 0.5em;
+    padding: 2em 1em;
+    background-color: hsla(0, 0%, 100%, 0.4);
+
+}
+
+#footer {
+    width: 100%;
+    height: 100px;
+
+}
+
+#contactfooter {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#contactfooter {
+    margin: 2rem 1rem;
+}
+
+button {
+    font-family: 'Ubuntu';
+}
+
+button:hover {
+    background-color: #c2e03e;
+    cursor: pointer;
+}
+#BodyButton:hover{
+    background-color: #d8fc28;
+}
